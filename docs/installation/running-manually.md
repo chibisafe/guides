@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Running chibisafe manually
 
-> This document will guide you in setting up chibisafe manually in a server. Keep in mind we strongly recommend you use the [Docker guide](/guides/running-with-docker) instead as it's simpler and tested thoroughly.
+> This document will guide you in setting up chibisafe manually in a server. Keep in mind we strongly recommend you use the [Docker guide](/guides/docs/installation/running-with-docker) instead as it's simpler and tested thoroughly.
 
 In order to install chibisafe and run it without containers there are a few things you need to set up on your system beforehand. This guide assumes you are using Ubuntu/Debian so feel free to adjust commands as you see fit based on your distro.
 
