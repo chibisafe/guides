@@ -45,8 +45,8 @@ _If you fork/deploy your own instance it would mean a lot if you were to keep ei
 Whichever method you choose to install chibisafe keep in mind that the installation process creates an account named `admin` with the same password. Once you log in the first time make sure to change it! Also we ***highly*** recommend using docker for chibisafe.
 
 - [Running chibisafe with Docker](https://chibisafe.app/guides/docs/installation/running-with-docker)
-- [Running chibisafe manually](https://chibisafe.app/guides/running-manually)
-- [Using network storage with chibisafe](https://chibisafe.app/guides/using-network-storage)
+- [Running chibisafe manually](https://chibisafe.app/guides/docs/installation/running-manually)
+- [Using network storage with chibisafe](https://chibisafe.app/guides/docs/installation/using-network-storage)
 
 For more guides and how to set up different aspects of the service [please refer to the guides](https://chibisafe.app/guides)
 

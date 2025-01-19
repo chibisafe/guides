@@ -22,7 +22,7 @@ You will also need a FQDN (Fully Qualified Domain Name) pointing to your server.
 
 ### Installing
 
-This guide assumes you will use Docker to run chibisafe. If you want to run it manually, just follow the [manual guide](/guides/running-manually) and install Nginx Proxy Manager like we said.
+This guide assumes you will use Docker to run chibisafe. If you want to run it manually, just follow the [manual guide](/guides/docs/installation/running-manually) and install Nginx Proxy Manager like we said.
 
 First, move to a place where you can install it:
 
