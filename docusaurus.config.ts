@@ -99,6 +99,11 @@ const config: Config = {
 				},
 			],
 		},
+		colorMode: {
+			defaultMode: "dark",
+			disableSwitch: false,
+			respectPrefersColorScheme: true,
+		},
 		// footer: {
 		// 	style: "dark",
 		// 	links: [
