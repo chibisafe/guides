@@ -9,7 +9,7 @@ summary: This guide shows you how to run chibisafe with Nginx Proxy Manager (or 
 In order to install chibisafe and run it with Nginx Proxy Manager there are a few things you need to set up on your system beforehand. This guide assumes you are using Ubuntu/Debian so feel free to adjust commands as you see fit based on your distro.
 
 :::tip
-  This guide assumes you are an advanced user. If you are not familiar with Docker, Nginx Proxy Manager and development in general, please install chibisafe normally through docker and follow the [official guide](/guides/docs/installation/running-with-docker).
+  This guide assumes you are an advanced user. If you are not familiar with Docker, Nginx Proxy Manager and development in general, please install chibisafe normally through docker and follow the [official guide](/docs/installation/running-with-docker).
 :::
 
 ### Pre-requisites
@@ -22,7 +22,7 @@ You will also need a FQDN (Fully Qualified Domain Name) pointing to your server.
 
 ### Installing
 
-This guide assumes you will use Docker to run chibisafe. If you want to run it manually, just follow the [manual guide](/guides/docs/installation/running-manually) and install Nginx Proxy Manager like we said.
+This guide assumes you will use Docker to run chibisafe. If you want to run it manually, just follow the [manual guide](/docs/installation/running-manually) and install Nginx Proxy Manager like we said.
 
 First, move to a place where you can install it:
 
