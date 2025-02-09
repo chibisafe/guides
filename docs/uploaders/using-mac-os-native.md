@@ -1,4 +1,4 @@
-# macOS Screenshot Auto-Upload Guide for New Users
+# macOS Screenshot Auto-Upload Guide
 
 This guide will help you set up an **automatic screenshot upload system** on macOS using the shortcut **Command + Shift + =**. Once set up, pressing this shortcut will take a screenshot, upload it to `https://your.chibi.domain.com/api/upload`, and copy the image URL to your clipboard.
 
@@ -45,9 +45,8 @@ This guide will help you set up an **automatic screenshot upload system** on mac
    # Optional: Delete the screenshot after upload
    rm "$SCREENSHOT_PATH"
    ```
-   
-3a. **Please MAKE SURE TO CHANGE `your.chibi.domain.com` to your actual domain for your chibisafe instance!**
-4. **Save and exit**:
+4. **Please MAKE SURE TO CHANGE `your.chibi.domain.com` to your actual domain for your chibisafe instance!**
+5. **Save and exit**:
     - Press `CTRL + X`, then `Y`, then `Enter`.
 5. **Make it executable**:
    ```bash
