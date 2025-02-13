@@ -151,7 +151,7 @@ server {
     }
 
     location / {
-        try_files $uri @app1;
+        try_files $uri @frontend;
     }
 
     location @app1 {
