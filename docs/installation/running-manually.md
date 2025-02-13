@@ -154,7 +154,7 @@ server {
         try_files $uri @frontend;
     }
 
-    location @app1 {
+    location @frontend {
         proxy_pass http://127.0.0.1:8001;
         proxy_set_header Host 127.0.0.1:8001;
         proxy_set_header X-Real-IP $remote_addr;
