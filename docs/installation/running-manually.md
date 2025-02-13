@@ -125,6 +125,42 @@ chibi.domain {
 	}
 }
 ```
+
+Nginx config example:
+```nginx title="/etc/nginx/sites-available/chibi.domain"
+server {
+    listen 80;
+    server_name chibi.domain;
+
+    root /app/uploads;
+
+    location ^~ /api/ {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host 127.0.0.1:8000;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location ^~ /docs/ {
+        try_files $uri @docs;
+    }
+
+    location @docs {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host 127.0.0.1:8000;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location / {
+        try_files $uri @frontend;
+    }
+
+    location @frontend {
+        proxy_pass http://127.0.0.1:8001;
+        proxy_set_header Host 127.0.0.1:8001;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+```
 :::tip
   Make sure to change chibi.domain for your own domain name, and `root /app/uploads` for the actual path where your upload folder is.
 :::
