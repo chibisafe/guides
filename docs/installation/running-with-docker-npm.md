@@ -16,7 +16,7 @@ In order to install chibisafe and run it with Nginx Proxy Manager there are a fe
 
 Before running chibisafe make sure you install docker and docker-compose. Please refer to the [official Docker documentation](https://docs.docker.com/get-docker/) for installation instructions.
 
-You will need to setup Nginx Proxy Manager as well, on port 80, 443 and 81. Go to the [official Nginx Proxy Manager documentation](https://nginxproxymanager.com/guide/#quick-setup) for installation instructions.
+You will need to set up Nginx Proxy Manager as well, on port 80, 443 and 81. Go to the [official Nginx Proxy Manager documentation](https://nginxproxymanager.com/guide/#quick-setup) for installation instructions.
 
 You will also need a FQDN (Fully Qualified Domain Name) pointing to your server. You can use a service like [Cloudflare](https://www.cloudflare.com/) to get a domain.
 
@@ -75,7 +75,7 @@ services:
 > We removed the caddy section, as we won't need it. We also exposed to the host the ports 8000 and 8001, so Nginx Proxy Manager can access them.
 
 :::tip
-  In this changes, we removed the static file serving. You will need to serve your chibisafe files from a different location with either a web server or a Docker container image that allows this, and then configure chibisafe accordingly.
+  In these changes, we removed the static file serving. You will need to serve your chibisafe files from a different location with either a web server or a Docker container image that allows this, and then configure chibisafe accordingly.
   Head over to the [file serving](#serve-the-uploads) section for more information on how to do this.
 :::
 
@@ -95,9 +95,9 @@ Now, you need to configure Nginx Proxy Manager to proxy the requests to chibisaf
 - **Forward Hostname/IP**: \<your local ip or public ip\>
 - **Forward Port**: 8001
 
-> Don't forget to enable `cache assets`, `websockets support` and configure an SSL certificate (also enable `force ssl`). You can use Let's Encrypt for that.
+> Don't forget to enable `cache assets` and configure an SSL certificate (also enable `force ssl`). You can use Let's Encrypt for that.
 
-Then, head over to the location tab and add a two new locations:
+Then, head over to the location tab and add two new locations:
 
 - **location**: /api
 - **scheme**: http
@@ -133,6 +133,9 @@ services:
       - "8002:8080"
     volumes:
       - "./uploads:/web"
+    environment:
+      - ALLOW_INDEX=false
+      - SHOW_LISTING=false
 
   chibisafe:
     image: chibisafe/chibisafe:latest
