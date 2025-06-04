@@ -12,7 +12,7 @@ Not all screenshot utilities allow you to upload images directly to alternative 
 1. The **`fswatch` binary**.  
 Project Page: [emcrisostomo/fswatch](https://github.com/emcrisostomo/fswatch)
 2. Your **Request URL**.  
-Example: `https://foo.bar/api/upload`
+Example: `https://your-chibi-domain.example.com/api/upload`
 3. Your **API Key**.  
 Example: `GI4nAlK6gwy8T2BvmP31ZwaNbtgxACbXxQZb3nUiLcpPanl03f6WKxuaBkMfMy1C`
 4. The **directory** where you want to **watch** for changes  
@@ -40,7 +40,7 @@ touch chibisafe_watcher.env
 Open `chibisafe_watcher.env` with your favorite editor and paste the following content, and replace the values with your own:
 
 ```sh
-CHIBISAFE_REQUEST_URL=https://foo.bar/api/upload
+CHIBISAFE_REQUEST_URL=https://your-chibi-domain.example.com/api/upload
 CHIBISAFE_API_KEY=GI4nAlK6gwy8T2BvmP31ZwaNbtgxACbXxQZb3nUiLcpPanl03f6WKxuaBkMfMy1C
 CHIBISAFE_WATCH_DIR=/home/catbox/screenshots/
 

@@ -20,7 +20,7 @@ Now go the plugin settings and fill the following information:
 
 - Api Endpoint
 ```
-https://your-chibisafe-full-domain/api/upload
+https://your-chibi-domain.example.com/api/upload
 ```
 - Upload Header
 ```json

@@ -88,7 +88,7 @@ If you rather use PM2 what you can do is create a file called `chibisafe.json` i
 ```
 
 :::tip
-  Make sure to change chibi.domain for your own domain name.
+  Make sure to change your-chibi-domain.example.com for your own domain name.
 :::
 
 Now you can run the following command and chibisafe will run in the background
@@ -102,7 +102,7 @@ In order to make chibisafe's 2 processes usable and attach a domain name, you ne
 Once you have Caddy installed locally you can add this to your Caddyfile in order reverse proxy the exposed ports from chibisafe:
 
 ```caddy title="/etc/caddy/Caddyfile"
-chibi.domain {
+your-chibi-domain.example.com {
 	route {
 		file_server * {
 			root /app/uploads
@@ -127,10 +127,10 @@ chibi.domain {
 ```
 
 Nginx config example:
-```nginx title="/etc/nginx/sites-available/chibi.domain"
+```nginx title="/etc/nginx/sites-available/your-chibi-domain.example.com"
 server {
     listen 80;
-    server_name chibi.domain;
+    server_name your-chibi-domain.example.com;
 
     root /app/uploads;
 
@@ -162,7 +162,7 @@ server {
 }
 ```
 :::tip
-  Make sure to change chibi.domain for your own domain name, and `root /app/uploads` for the actual path where your upload folder is.
+  Make sure to change your-chibi-domain.example.com for your own domain name, and `root /app/uploads` for the actual path where your upload folder is.
 :::
 
 After correctly setting your Caddyfile and restarting the caddy process in your system, you should be able to visit your instance with the domain name and start using it.

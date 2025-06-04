@@ -7,7 +7,7 @@ sidebar_position: 4
 This guide provides detailed steps to deploy **chibisafe** using Docker, Traefik, and NGINX. It assumes that you have Docker, Docker Compose, and a running Traefik instance already installed and configured. If you don't have a Traefik installation, please refer to the [official Traefik documentation](https://doc.traefik.io/traefik).
 
 > **Important:**  
-> Replace all instances of `your-domain-name.com` and `cdn.your-domain-name.com` with your actual domain names to ensure correct routing and SSL certificate issuance.
+> Replace all instances of `your-chibi-domain.example.com` and `cdn.your-chibi-domain.example.com` with your actual domain names to ensure correct routing and SSL certificate issuance.
 
 ## Prerequisites
 
@@ -54,13 +54,13 @@ services:
       # HTTP Router
       traefik.http.routers.chibisafe-http.entrypoints: web
       traefik.http.routers.chibisafe-http.middlewares: globalHeaders@file,redirect-to-https@docker,robotHeaders@file # Optional
-      traefik.http.routers.chibisafe-http.rule: Host(`your-domain-name.com`) && !PathPrefix(`/api`) && !PathPrefix(`/docs`)
+      traefik.http.routers.chibisafe-http.rule: Host(`your-chibi-domain.example.com`) && !PathPrefix(`/api`) && !PathPrefix(`/docs`)
       traefik.http.routers.chibisafe-http.service: chibisafe
 
       # HTTPS Router (Secure)
       traefik.http.routers.chibisafe.entrypoints: websecure
       traefik.http.routers.chibisafe.middlewares: globalHeaders@file,secureHeaders@file,robotHeaders@file # Optional
-      traefik.http.routers.chibisafe.rule: Host(`your-domain-name.com`) && !PathPrefix(`/api`) && !PathPrefix(`/docs`)
+      traefik.http.routers.chibisafe.rule: Host(`your-chibi-domain.example.com`) && !PathPrefix(`/api`) && !PathPrefix(`/docs`)
       traefik.http.routers.chibisafe.service: chibisafe
       traefik.http.routers.chibisafe.tls.certresolver: cfdns # Alternatively, you can use letsencrypt
       traefik.http.routers.chibisafe.tls.options: securetls@file
@@ -81,13 +81,13 @@ services:
       # HTTP Router
       traefik.http.routers.chibisafe-server-http.entrypoints: web
       traefik.http.routers.chibisafe-server-http.middlewares: globalHeaders@file,redirect-to-https@docker,robotHeaders@file # Optional
-      traefik.http.routers.chibisafe-server-http.rule: Host(`your-domain-name.com`) && (PathPrefix(`/api`) || PathPrefix(`/docs`))
+      traefik.http.routers.chibisafe-server-http.rule: Host(`your-chibi-domain.example.com`) && (PathPrefix(`/api`) || PathPrefix(`/docs`))
       traefik.http.routers.chibisafe-server-http.service: chibisafe-server
 
       # HTTPS Router (Secure)
       traefik.http.routers.chibisafe-server.entrypoints: websecure
       traefik.http.routers.chibisafe-server.middlewares: globalHeaders@file,secureHeaders@file,robotHeaders@file
-      traefik.http.routers.chibisafe-server.rule: Host(`your-domain-name.com`) && (PathPrefix(`/api`) || PathPrefix(`/docs`)) # Optional
+      traefik.http.routers.chibisafe-server.rule: Host(`your-chibi-domain.example.com`) && (PathPrefix(`/api`) || PathPrefix(`/docs`)) # Optional
       traefik.http.routers.chibisafe-server.service: chibisafe-server
       traefik.http.routers.chibisafe-server.tls.certresolver: cfdns # Alternatively, you can use letsencrypt
       traefik.http.routers.chibisafe-server.tls.options: securetls@file
@@ -113,13 +113,13 @@ services:
       # HTTP Router
       traefik.http.routers.chibisafe-cdn-http.entrypoints: web
       traefik.http.routers.chibisafe-cdn-http.middlewares: globalHeaders@file,redirect-to-https@docker,robotHeaders@file # Optional
-      traefik.http.routers.chibisafe-cdn-http.rule: Host(`cdn.your-domain-name.com`) # Make sure to set this as "Serve Uploads From" in settings later.
+      traefik.http.routers.chibisafe-cdn-http.rule: Host(`cdn.your-chibi-domain.example.com`) # Make sure to set this as "Serve Uploads From" in settings later.
       traefik.http.routers.chibisafe-cdn-http.service: chibisafe-cdn
 
       # HTTPS Router (Secure)
       traefik.http.routers.chibisafe-cdn.entrypoints: websecure
       traefik.http.routers.chibisafe-cdn.middlewares: globalHeaders@file,secureHeaders@file,robotHeaders@file # Optional
-      traefik.http.routers.chibisafe-cdn.rule: Host(`cdn.your-domain-name.com`) # Make sure to set this as "Serve Uploads From" in settings later.
+      traefik.http.routers.chibisafe-cdn.rule: Host(`cdn.your-chibi-domain.example.com`) # Make sure to set this as "Serve Uploads From" in settings later.
       traefik.http.routers.chibisafe-cdn.service: chibisafe-cdn
       traefik.http.routers.chibisafe-cdn.tls.certresolver: cfdns # Alternatively, you can use letsencrypt
       traefik.http.routers.chibisafe-cdn.tls.options: securetls@file

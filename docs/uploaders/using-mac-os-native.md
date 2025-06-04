@@ -1,10 +1,10 @@
 # macOS Screenshot Auto-Upload Guide
 
-This guide will help you set up an **automatic screenshot upload system** on macOS using the shortcut **Command + Shift + =**. Once set up, pressing this shortcut will take a screenshot, upload it to `https://your.chibi.domain.com/api/upload`, and copy the image URL to your clipboard.
+This guide will help you set up an **automatic screenshot upload system** on macOS using the shortcut **Command + Shift + =**. Once set up, pressing this shortcut will take a screenshot, upload it to `https://your-chibi-domain.example.com/api/upload`, and copy the image URL to your clipboard.
 
 ## Features
 ✅ **Global shortcut (Command + Shift + =) to take & upload screenshots**  
-✅ **Automatic upload to `https://your.chibi.domain.com/api/upload`**  
+✅ **Automatic upload to `https://your-chibi-domain.example.com/api/upload`**  
 ✅ **Copy the uploaded image URL to the clipboard**  
 ✅ **macOS notifications for success or failure**
 
@@ -23,7 +23,7 @@ This guide will help you set up an **automatic screenshot upload system** on mac
    
    # Configuration
    API_KEY="YOUR_API_KEY_HERE" #Put the api key from `Dashboard -> Credentials -> API Key` here
-   UPLOAD_URL="https://your.chibi.domain.com/api/upload" #Please change `your.chibi.domain.com` to your domain for your instance
+   UPLOAD_URL="https://your-chibi-domain.example.com/api/upload" #Please change `your-chibi-domain.example.com` to your domain for your instance
    SCREENSHOT_PATH="$HOME/Desktop/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"
    
    # Take Screenshot (Interactive Mode)
@@ -45,7 +45,7 @@ This guide will help you set up an **automatic screenshot upload system** on mac
    # Optional: Delete the screenshot after upload
    rm "$SCREENSHOT_PATH"
    ```
-4. **Please MAKE SURE TO CHANGE `your.chibi.domain.com` to your actual domain for your chibisafe instance!**
+4. **Please MAKE SURE TO CHANGE `your-chibi-domain.example.com` to your actual domain for your chibisafe instance!**
 5. **Save and exit**:
     - Press `CTRL + X`, then `Y`, then `Enter`.
 5. **Make it executable**:
@@ -97,12 +97,12 @@ This guide will help you set up an **automatic screenshot upload system** on mac
 ## 🚀 Usage
 Now, whenever you press `⌘ + ⇧ + =`, macOS will:
 ✅ **Capture a screenshot interactively**.  
-✅ **Upload it automatically** to `https://your.chibi.domain.com/api/upload`.  
+✅ **Upload it automatically** to `https://your-chibi-domain.example.com/api/upload`.  
 ✅ **Copy the uploaded image URL** to your clipboard.  
 ✅ **Show a success/failure notification**.  
 ✅ **Work globally in any app**.
 
 This setup ensures a **seamless screenshot upload process**! 🚀
 
-**Please MAKE SURE TO CHANGE `your.chibi.domain.com` to your actual domain for your chibisafe instance!**
+**Please MAKE SURE TO CHANGE `your-chibi-domain.example.com` to your actual domain for your chibisafe instance!**
 

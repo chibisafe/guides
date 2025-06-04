@@ -119,7 +119,7 @@ In order to attach a domain name to an application running with an exposed port 
 Once you have Caddy installed locally you can add this to your Caddyfile in order reverse proxy the exposed port from chibisafe:
 
 ```caddy title="/etc/caddy/Caddyfile"
-your-chibisafe-domain.com {
+your-chibi-domain.example.com {
 	reverse_proxy localhost:24424
 }
 ```
@@ -127,7 +127,7 @@ your-chibisafe-domain.com {
 If you use Cloudflare or a similar service and want your instance to be proxied by them, you should instead use the one below since it adds the necessary headers to pass the visitor's IP to the chibisafe instance. Note that the trusted proxies and X-Forwarded-For headers are specifically made for use with Cloudflare and will require modification for other proxies.
 
 ```caddy title="/etc/caddy/Caddyfile"
-your-chibisafe-domain.com {
+your-chibi-domain.example.com {
 	tls internal
 	reverse_proxy localhost:24424 {
 		trusted_proxies 173.245.48.0/20 103.21.244.0/22 103.22.200.0/22 103.31.4.0/22 141.101.64.0/18 108.162.192.0/18 190.93.240.0/20 188.114.96.0/20 197.234.240.0/22 198.41.128.0/17 162.158.0.0/15 104.16.0.0/13 104.24.0.0/14 172.64.0.0/13 131.0.72.0/22 2400:cb00::/32 2606:4700::/32 2803:f800::/32 2405:b500::/32 2405:8100::/32 2a06:98c0::/29 2c0f:f248::/32
@@ -146,7 +146,7 @@ Configuring Nginx is more difficult so we're only providing with a skeleton conf
 # Chibisafe Reverse Proxy
 
 server {
-	server_name chibi.domain;
+	server_name your-chibi-domain.example.com;
 	listen [::]:443 ssl;
 	listen 443 ssl;
 
@@ -166,7 +166,7 @@ server {
 ```
 
 :::tip 
-  Make sure to change chibi.domain for your own domain name.
+  Make sure to change your-chibi-domain.example.com for your own domain name.
 :::
 
 
