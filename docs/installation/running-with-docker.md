@@ -66,6 +66,12 @@ services:
 Now that your `docker-compose.yml` file is set up it's now time to create the `Caddyfile` to finish the configuration process:
 
 ```caddy title="chibisafe/Caddyfile"
+{
+	servers {
+		trusted_proxies static private_ranges
+		client_ip_headers X-Forwarded-For X-Real-IP
+	}
+}
 {$BASE_URL} {
 	route {
 		file_server * {
