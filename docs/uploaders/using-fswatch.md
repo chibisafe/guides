@@ -76,7 +76,7 @@ upload() {
 }
 
 start_watch() {
-    fswatch -0 "${WATCH_DIR}" | while read -d "" new_file
+    fswatch -0 "${CHIBISAFE_WATCH_DIR}" | while read -d "" new_file
     do
         if [ -f "${new_file}" ]; then
             upload "${new_file}"
